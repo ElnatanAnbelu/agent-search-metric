@@ -52,7 +52,7 @@ Of the 33 runs that measured two or more configurations at comparable scope:
 | submitted the best one they measured | 8 (24%) |
 | submitted one within 2% of it | 2 (6%) |
 | submitted a measured configuration that was clearly worse | 8 (24%) |
-| submitted a configuration they never measured | 15 (45%) |
+| submitted a configuration they never measured | 15 (45%): 11 (33%) provably, 4 unknown after the truncation check |
 
 Restricted to readings whose full scope is provable, 27 runs, the shape holds: 22% submitted
 their best, 15% something worse, 56% something unmeasured.
