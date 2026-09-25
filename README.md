@@ -39,14 +39,6 @@ Two findings forced the design:
   by script name would mean guessing names, so the extractor tracks which shell scripts the run
   authored and treats invoking one of those as a launch.
 
-### What made extraction hard
-
-Two runs decided the design. **run_0001 never used vLLM at all**; it hand-rolled a uvicorn
-server, so a parser keyed to vLLM flags scores it as trying nothing when it tried several.
-**run_0127 launched through `test_server.sh`, a wrapper it wrote itself**, so detecting launches
-by script name would mean guessing names. The extractor tracks which shell scripts each run
-authored and treats invoking one of those as a launch.
-
 The behaviour the paper describes is visible run by run. run_0016 evaluated 3 distinct
 configurations and relaunched them more than twenty times, then failed the quality gate with
 empty outputs.
@@ -101,7 +93,9 @@ which is a fact about the traces. Both are reported rather than worked around, a
    baseline, and the baselines are not in the dataset. Without them a run that never launched
    anything can look good: run_0126 gave up 34 minutes into a two-hour budget, never started a
    server, and reports the best raw number in its scenario because the default answered.
-3. **Whether the authors want it.** Not asked yet.
+3. **Whether the authors want it.** Proposed upstream as
+   [aisa-group/InferenceBench#2](https://github.com/aisa-group/InferenceBench/issues/2)
+   on 2026-09-05; no reply yet.
 
 ## Running it
 
